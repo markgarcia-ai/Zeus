@@ -1,0 +1,191 @@
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top, rgba(234, 179, 8, 0.18), transparent 35%),
+    linear-gradient(135deg, #020617, #111827 45%, #1e1b4b);
+  color: #f8fafc;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.login-page {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top, rgba(250, 204, 21, 0.25), transparent 35%),
+    linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
+}
+
+.login-card {
+  width: 420px;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow:
+    0 0 40px rgba(250, 204, 21, 0.15),
+    0 30px 90px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  color: #f8fafc;
+}
+
+.login-card h1 {
+  font-size: 54px;
+  margin: 0 0 8px;
+  color: #facc15;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(250, 204, 21, 0.35);
+}
+
+.login-card p {
+  color: #cbd5e1;
+  margin-bottom: 26px;
+  font-size: 17px;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(250, 204, 21, 0.35);
+  background: #020617;
+  color: #f8fafc;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.login-card button {
+  width: 100%;
+}
+
+.error {
+  color: #f87171 !important;
+  margin-top: 12px;
+}
+
+.app {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 34px;
+}
+
+header {
+  margin-bottom: 24px;
+  color: white;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 8px;
+  font-size: 52px;
+  color: #facc15;
+  letter-spacing: 1px;
+  text-shadow: 0 0 28px rgba(250, 204, 21, 0.35);
+}
+
+header p {
+  color: #cbd5e1;
+  font-size: 18px;
+}
+
+main {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(250, 204, 21, 0.28);
+  border-radius: 26px;
+  padding: 22px;
+  box-shadow:
+    0 0 45px rgba(250, 204, 21, 0.12),
+    0 25px 80px rgba(0, 0, 0, 0.45);
+}
+
+.chat-box {
+  height: 620px;
+  overflow-y: auto;
+  border: 1px solid rgba(250, 204, 21, 0.25);
+  border-radius: 20px;
+  padding: 20px;
+  background:
+    linear-gradient(180deg, rgba(2, 6, 23, 0.95), rgba(15, 23, 42, 0.95));
+}
+
+.message {
+  max-width: 80%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  margin-bottom: 14px;
+  white-space: pre-wrap;
+  line-height: 1.55;
+  font-family: Arial, sans-serif;
+}
+
+.message.user {
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+  color: white;
+  margin-left: auto;
+  border: 1px solid rgba(147, 197, 253, 0.35);
+}
+
+.message.assistant {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  color: #f8fafc;
+  margin-right: auto;
+  border: 1px solid rgba(250, 204, 21, 0.28);
+  box-shadow: 0 0 18px rgba(250, 204, 21, 0.08);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+form {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid rgba(250, 204, 21, 0.28);
+  background: #020617;
+  color: #f8fafc;
+  font-size: 16px;
+}
+
+input::placeholder {
+  color: #94a3b8;
+}
+
+button {
+  padding: 14px 22px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #facc15, #ca8a04);
+  color: #111827;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 0 18px rgba(250, 204, 21, 0.25);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #fde047, #eab308);
+  transform: translateY(-1px);
+}
+
+#talkButton {
+  background: linear-gradient(135deg, #7c3aed, #312e81);
+  color: white;
+}
+
+#talkButton:hover {
+  background: linear-gradient(135deg, #8b5cf6, #4338ca);
+}

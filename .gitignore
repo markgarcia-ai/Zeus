@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+*_env/
+site-packages/
+
+# Mac / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Build artifacts
+dist/
+build/
+release/
+*.app
+*.dmg
+
+# ML artifacts
+*.gguf
+*.safetensors
+models/
+checkpoints/
+adapters/
+
+# Logs / env
+*.log
+.env
+.env.*
