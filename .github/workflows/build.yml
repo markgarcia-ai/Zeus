@@ -1,4 +1,4 @@
-name: Zeus Build
+name: Zeus Build and Push
 
 on:
   push:
@@ -6,22 +6,31 @@ on:
       - main
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-and-push:
+    runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v5
         with:
-          python-version: "3.12"
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: Install backend dependencies
-        run: |
-          cd backend
-          pip install -r requirements.txt
+      - name: Login to Amazon ECR
+        uses: aws-actions/amazon-ecr-login@v3
 
-      - name: Build backend Docker image
+      - name: Build Docker image
         run: |
           docker build -t zeus-api -f backend/Dockerfile .
+
+      - name: Tag Docker image
+        run: |
+          docker tag zeus-api:latest ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
+
+      - name: Push Docker image to ECR
+        run: |
+          docker push ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
