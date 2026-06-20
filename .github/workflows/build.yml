@@ -24,4 +24,4 @@ jobs:
 
       - name: Build backend Docker image
         run: |
-          docker build -t zeus-api ./backend
+          docker build -t zeus-api -f backend/Dockerfile .
